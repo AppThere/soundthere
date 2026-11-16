@@ -100,7 +100,7 @@ fun Arrangement(modifier: Modifier) {
                         val laneH = LANE_DP * density; val rulerH = RULER_DP * density
                         if (p.y < rulerH) {
                             val at = ((scrollSec + p.x * secondsPerPx) * rate).toLong().coerceAtLeast(0)
-                            w.run("engine.execute", buildJsonObject { put("command", "transport.locate"); put("params", buildJsonObject { put("at", at) }) }) {}
+                            w.run("transport.locate", buildJsonObject { put("at", at) }) {}
                             return@detectTapGestures
                         }
                         val row = ((p.y - rulerH) / laneH).toInt()
@@ -108,7 +108,7 @@ fun Arrangement(modifier: Modifier) {
                         val sample = (scrollSec + p.x * secondsPerPx) * rate
                         val clip = track.obj()?.get("clips").arr().firstOrNull { c -> sample >= (c.long("start") ?: 0) && sample < (c.long("end") ?: 0) }
                         val params = if (clip != null) buildJsonObject { put("clips", ids(clip.long("id") ?: return@detectTapGestures)) } else buildJsonObject { put("tracks", ids(track.long("id") ?: return@detectTapGestures)) }
-                        w.run("engine.execute", buildJsonObject { put("command", "edit.select"); put("params", params) }) {}
+                        w.run("edit.select", params) {}
                     }
                 },
         ) {
