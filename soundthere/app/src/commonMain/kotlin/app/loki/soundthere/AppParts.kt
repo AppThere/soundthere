@@ -104,7 +104,7 @@ fun toolCommand(id: String): Pair<String, JsonObject>? = null
 fun toolInHand(state: JsonElement?): String? = null
 
 private fun exec(run: (String, JsonObject) -> Unit, command: String, params: JsonObject = JsonObject(emptyMap())) =
-    run("engine.execute", buildJsonObject { put("command", command); put("params", params) })
+    run(command, params)
 
 internal fun ids(vararg v: Long) = buildJsonArray { v.forEach { add(JsonPrimitive(it)) } }
 
