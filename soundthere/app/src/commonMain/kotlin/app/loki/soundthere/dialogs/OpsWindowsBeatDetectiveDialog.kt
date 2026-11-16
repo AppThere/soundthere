@@ -55,8 +55,8 @@ fun OpsWindowsBeatDetectiveDialog(onRun: (command: String, params: JsonObject) -
             TextButton(onClick = onDismiss) { Text("Cancel") }
             TextButton(onClick = {
                 val params = buildJsonObject {
-                put("beatSensitivity", f0)
-                put("ui", f1)
+                put("sensitivity", f0)
+                put("tracks", f1)
                 put("ui", f2)
                 f3.trim().replace(',', '.').toDoubleOrNull()?.let { put("identifyBars", it) }
                 }
