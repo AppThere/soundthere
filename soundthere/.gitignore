@@ -1,0 +1,6 @@
+target/
+build/
+.gradle/
+app/build/
+app/src/androidMain/jniLibs/
+ui-model.json

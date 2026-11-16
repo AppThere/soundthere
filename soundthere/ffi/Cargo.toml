@@ -1,0 +1,22 @@
+[package]
+name = "loki-ffi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "C ABI over the SoundCraft engine for the SoundThere Kotlin Multiplatform front end"
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+soundcraft-automation = { path = "../../crates/automation" }
+soundcraft-engine = { path = "../../crates/engine" }
+serde_json = "1"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+unimplemented = "deny"
+todo = "deny"
+unreachable = "deny"
