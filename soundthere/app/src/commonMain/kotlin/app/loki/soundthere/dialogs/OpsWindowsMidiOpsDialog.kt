@@ -58,9 +58,9 @@ fun OpsWindowsMidiOpsDialog(onRun: (command: String, params: JsonObject) -> Unit
             TextButton(onClick = {
                 val params = buildJsonObject {
                 if (f0.isNotBlank()) put("midiOp", f0)
-                if (f1.isNotBlank()) put("quantGrid", f1)
-                put("quantStrength", f2)
-                put("quantSwing", f3)
+                if (f1.isNotBlank()) put("grid", f1)
+                put("strength", f2)
+                put("swing", f3)
                 put("transpose", f4)
                 put("velocityAdd", f5)
                 }

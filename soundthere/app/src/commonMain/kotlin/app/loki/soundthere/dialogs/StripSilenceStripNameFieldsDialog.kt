@@ -60,7 +60,7 @@ fun StripSilenceStripNameFieldsDialog(onRun: (command: String, params: JsonObjec
                 f2.trim().replace(',', '.').toDoubleOrNull()?.let { put("zeros", it) }
                 if (f3.isNotBlank()) put("suffix", f3)
                 }
-                /* TODO: which command this dialog runs was not found */
+                onRun("edit.strip_silence", params)
                 onDismiss()
             }) { Text("OK") }
         },
