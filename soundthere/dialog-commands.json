@@ -1,0 +1,5 @@
+{
+  "NewTracks": "track.new",
+  "OpsWindowsTempoOps": "event.tempo_ops_window",
+  "StripSilenceStripNameFields": "edit.strip_silence"
+}
